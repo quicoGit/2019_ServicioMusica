@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var arrancar:Button = findViewById(R.id.boton_arrancar)
+        var arrancar:Button = findViewById<Button>(R.id.boton_arrancar)
         arrancar.setOnClickListener(this)
 
         var detener:Button = findViewById(R.id.boton_detener)
@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     Tratamos el onclick
      */
     override fun onClick(v: View?) {
-        var intent:Intent = Intent(this, ServicioMusica::class.java)
+        //var intent:Intent = Intent(this, ServicioMusica::class.java)
+        var intent:Intent = Intent(this, ServicioSocorro::class.java)
         when (v?.id) {
             R.id.boton_arrancar -> {
                 startService(intent)
